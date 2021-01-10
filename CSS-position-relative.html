@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS position</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            position: relative;
+            /* top, left chỉ hoạt động khi có position */
+            left: 100px;
+            top: 50px;
+        }
+
+        .box-absolute {
+            width: 200px;
+            height: 220px;
+            background-color: rgb(65, 63, 63);
+            position: relative;
+            background-image: url(https://post.greatist.com/wp-content/uploads/sites/3/2020/02/325466_1100-1100x628.jpg);
+        }
+
+        .child-box-absolute {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(194, 18, 18);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /* chỉ ưu tiên top,left vì kích thước ngắn và thấp nên không chạm */
+            /* được vào 2 đầu mút và trên dưới */
+            right: 0;
+            bottom: 0;
+            /* có thẻ bỏ width và height vào cho top,left,right,bottom = 0 */
+            /* để phủ hết lớp cha */
+
+            width: 0;
+            height: 0;
+            background-color: rgba(0, 234, 232, 0.3);
+
+        }
+        .box-sticky{
+            margin-top: 30px;
+            position: sticky;
+            top: 0px;
+            left: 0;
+            right: 0;
+            background-color: black;
+            height: 40px;
+            z-index: 9999;
+            color: white;
+        }
+        .box-absolute{
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-sticky">
+        position sticky
+    </div>
+    <h1>CSS position</h1>
+    <ol>
+        <li>relative: <br>
+            ko bị phụ thuộc vào đối tượng khác,<br>
+            phụ thuộc vào chính nó nên nó nên nó đứng yên ở đó<br>
+            lấy vị trí nó đang đứng làm gốc tọa độ
+        </li>
+        <li>absolute: lấy thẻ cha gần nhất có thuộc tính position làm gốc tọa độ</li>
+        <li>fixed: phụ thuộc vào cửa sổ trình duyệt</li>
+        <li>sticky: ko nên dùng vì ít browser hỗ trợ</li>
+    </ol>
+    <div class="box-absolute">
+        hello
+        <div class="child-box-absolute"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The band template</title>
+    <link rel="icon" type="image/png"
+        href="https://www.pngfind.com/pngs/m/16-169625_music-band-png-band-music-transparent-png.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- custom style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- cái nào ưu tiên hơn phải viết bên dưới -->
+    <!-- <link rel="stylesheet" href="./css/responsive.css"> -->
+    <link rel="stylesheet" href="./css/my-responsive.css">
+
+
+
+</head>
+
+<body>
+    <header id="header">
+        <ul class="header-nav__list">
+             <!-- viết hoa các chữ trong css vì admin khi nhập từ backend có thể ko 
+                kiểm soát đc nhập hoa hay thường -->
+            <li class="header-nav__item left-float"><a href="#">Home</a></li>
+            <!--thẻ li có thuộc tính list item nên tự xuống hàng như thẻ div-->
+            <!--có thẻ dùng div thay li-->
+            <li class="header-nav__item left-float"><a href="#band">band</a></li>
+            <li class="header-nav__item left-float"><a href="#tour">tour</a></li>
+            <li class="header-nav__item left-float"><a href="#contact">contact</a></li>
+            <li class="header-nav__item left-float">
+                <!-- nếu để trống sẽ reload lại trang -->
+                <!-- dấu # hiểu ở trang hiện tại nên không reload lại -->
+                <a href="#">
+                    more
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                  <!--dùng class, k dùng Id, 
+                            vì có thể có nhiều subnav của các mục khác, như tour or band-->
+                <ul class="header-sub-nav">
+                    <li class="header-sub-nav__item"><a class="header-sub-nav__link padding-16" href="#">Merchandise</a>
+                    </li>
+                    <li class="header-sub-nav__item"><a class="header-sub-nav__link padding-16" href="#">Extras</a></li>
+                    <li class="header-sub-nav__item"><a class="header-sub-nav__link padding-16" href="#">Media</a></li>
+                </ul>
+
+            </li>
+        </ul>
+
+        <div class="header-search right-float">
+            <a href="#" class="header-search__link">
+                <i class="header-search__icon fa fa-search"></i>
+            </a>
+            
+        </div>
+        <div class="mobile-icon right-float">
+            <i class="fa fa-bars"></i>
+        </div>
+    </header>
+    <div id="slider">
+        <div class="slider-bg">
+            <div class="slider-content">
+                <h3 class="slider-content__heading">New York</h3>
+                <p class="slider-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolorum
+                    error ut voluptates beatae inventore repellat explicabo placeat pariatur dolor, aliquid quas illo,
+                    id qui, mollitia aperiam minima ab dolorem!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <!-- the band -->
+        <div id="band" class="content">
+            <h3 class="content-heading">The band</h3>
+            <p class="content-slogan margin-top-25 margin-bottom-30">We love music</p>
+
+            <!-- the band detail -->
+            <div class="the-band">
+                <p class="the-band__text">
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+                <div class="the-band__team row">
+                    <div class="width-100 team-member col col-3">
+                        <p class="team-member__name margin-bottom-15">Name</p>
+                        <img src="./imgs/members/member-1.jpg" alt="name" class="team-member__avatar">
+                    </div>
+                    <div class="width-100 team-member col col-3">
+                        <p class="team-member__name margin-bottom-15">Name</p>
+                        <img src="./imgs/members/member-1.jpg" alt="name" class="team-member__avatar">
+                    </div>
+                    <div class="width-100 team-member col col-3">
+                        <p class="team-member__name margin-bottom-15">Name</p>
+                        <img src="./imgs/members/member-1.jpg" alt="name" class="team-member__avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- tour -->
+        <div id="tour" class="tour">
+            <div class="content">
+                <h3 class="content-heading">Tour date</h3>
+                <p class="content-slogan margin-top-25 margin-bottom-30">Remember to book your tickets!</p>
+                <ul class="status-tickets">
+                    <li class="ticket"><span>September</span><span> Sold out</span></li>
+                    <li class="ticket"><span>October</span><span>sold out</span></li>
+                    <li class="ticket"><span>November</span><span>3</span></li>
+                </ul>
+
+                <div class=" row place-list">
+
+                    <div class=" col col-3 place-infor width-100">
+
+                        <img src="./imgs/places/newyork.jpg" alt="new york">
+                        <div class="place-infor__content">
+                            <h3 class="place-infor__heading">New york</h3>
+                            <p class="place-infor__date margin-bottom-15 margin-top-15 ">Sun 29 Nov 2016</p>
+                            <p class="place-infor__text margin-bottom-15 ">Praesent tincidunt sed tellus ut rutrum sed
+                                vitae justo.
+                            </p>
+                            <button class="place-infor__btn btn width-100  ">Buy tickets</button>
+                        </div>
+                    </div>
+
+                    <div class=" col col-3 place-infor width-100">
+
+                        <img src="./imgs/places/paris.jpg" alt="paris">
+                        <div class="place-infor__content">
+                            <h3 class="place-infor__heading">Paris</h3>
+                            <p class="place-infor__date margin-bottom-15 margin-top-15 ">Sun 29 Nov 2016</p>
+                            <p class="place-infor__text margin-bottom-15 ">Praesent tincidunt sed tellus ut rutrum sed
+                                vitae justo.
+                            </p>
+                            <button class="place-infor__btn btn width-100  ">Buy tickets</button>
+                        </div>
+                    </div>
+
+                    <div class=" col col-3 place-infor width-100">
+
+                        <img src="./imgs/places/sanfran.jpg" alt="sanfran">
+                        <div class="place-infor__content">
+                            <h3 class="place-infor__heading">Sanfran sico</h3>
+                            <p class="place-infor__date margin-bottom-15 margin-top-15 ">Sun 29 Nov 2016</p>
+                            <p class="place-infor__text margin-bottom-15 ">Praesent tincidunt sed tellus ut rutrum sed
+                                vitae justo.
+                            </p>
+                            <!-- tăng chiều cao >42px để người dùng dễ bấm, tăng trải nghiệm người dùng (UX) -->
+                            <button class="place-infor__btn btn width-100  ">Buy tickets</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <!-- contact -->
+        <div id="contact" class="content">
+            <h3 class="content-heading">Contact</h3>
+            <p class="content-slogan margin-top-25 margin-bottom-30">Fan? Drop a note!</p>
+            <div class="row">
+                <div class="col col-2 left-float width-100 contact-infor">
+                    <p><i class="fa fa-map-marker"></i>Chicago, US</p>
+                    <!-- tel,mailto: click vào sẽ gọi or gửi email -->
+                    <!-- Nên để màu xanh mặc định. Nếu đổi thành màu đen thì người dùng không biết để bấm vào -->
+                    <p><i class="fa fa-phone"></i> <a href="tel:+84829101188">+84829101188</a> </p>
+                    <p><i class="fa fa-envelope" > </i><a href="mailto:huutu289@gmail.com">huutu289@gmail.com</a></p>
+                </div>
+                <div class="col col-2 left-float width-100  ">
+                    <form class="contact-form">
+                        <div class="row ">
+                            <div class="col col-2 left-float width-100 ">
+                                <input class="contact-form__name" type="text" placeholder="name" required>
+                            </div>
+                            <div class="col col-2 left-float width-100 ">
+                                <input class="contact-form__email margin-top-8" type="email" placeholder="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-full">
+                                <input class="contact-form__message" type="text" placeholder="message" required>
+                            </div>
+                        </div>
+                        <!-- tăng chiều cao >42px để người dùng dễ bấm, tăng trải nghiệm người dùng (UX) -->
+                        <input class="contact-form__btn btn width-100" type="submit" value="SEND">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="map">
+
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="list-socials">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <p>Powered by <a href="#">w3.css</a> </p>
+    </div>    
+    <script src="./js/my-main.js"></script>    
+    <script src="./js/carousel.js"></script>    
+</body>
+
+</html>

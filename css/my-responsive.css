@@ -1,0 +1,61 @@
+/* dùng em thay cho rem và pixel vì đúng trên nhiều trình duyệt */
+/* PC: >=1024px */
+@media(min-width: 64em) {}
+
+/* mobile and tablet <=1023px */
+@media (max-width: 63.9375em)
+{
+
+}
+/* 740px <= tablet <=1023px */
+@media(min-width: 740px) and (max-width:63.9375em) {}
+
+/* mobile: <=739px */
+@media (max-width: 46.1875em) {
+    #header {        
+        overflow: hidden;
+    }
+    #header .header-nav__list {
+        display: block;
+    }
+    #header .header-nav__list .header-nav__item {
+        float: initial !important;
+    }
+    #header .header-nav__list .header-nav__item:first-child {
+        display: inline-block;
+    }
+    #header .header-search {
+        display: none;
+    }
+    .mobile-icon.right-float {
+        display: initial;
+        color: var(--bg-white-color);
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 46px;
+        padding: 0 16px;
+        font-size: 20px;
+    }
+    /* hiện submenu bằng cách bỏ position: absolute */
+    .header-sub-nav{
+        position: initial;
+    }
+    .width-100{
+        width: 100%;
+    }
+    #container .the-band .team-member__avatar{
+        width: 80%;
+    }
+    /* footer */
+    #footer .list-socials li {
+        padding: 0 5px;
+    }
+    #footer a{
+        padding: 8px 5px;
+    }
+    #footer .list-socials li a i{
+        font-size: 30px;
+    }
+
+}

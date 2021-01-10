@@ -1,0 +1,390 @@
+
+/* Các thành phần thông thường của 1 website
+1.header
+2. navigation
+3. breadcrumb
+4. banner
+5. slider
+6. content
+7.footer
+---------------
+các thành phần của template band (one page)
+--header
+--slider: các hình ảnh nổi bậc tại các địa điểm khác nhau
+--content
+  + about: giới thiệu về band, slogen, names,...
+  + tour: các tour đã, đang và sắp diễn; số vé đã bán, các vé còn trống
+  + contact: thông tin liên hệ
+  + image or map: bản đồ chỉ đến địa chỉ band
+-- footer */
+/* --------------------------------------------------------------------------- */
+
+/* 
+--các việc cần làm của 1 thành phần
+-vị trí
+-kích thước (width, height)
+-màu sắc
+-kiểu dáng (kiểu chữ, vuông, tròn,..)
+*/
+
+/* 
+--quy tắc làm
+- từ ngoài vào trong
+- từ trên xuống dưới
+-từ trái qua phải
+- từ tổng quan -->chi tiết
+ */
+
+
+ /* phải dùng #nav .subnav để ko ảnh hưởng đến các phần khác */
+ /* thẻ có tính chất inline như a,span,... nếu thêm float vào thì có tính chất block */
+/* có thể thêm width, heigh, margin, padding,... */
+
+/* ------------------header---------------- */
+#header {
+    height: var(--header-height);
+    background-color: var(--bg-black-color);
+     /* khi có thuộc tính position: fixed thì tính chất khối ko chiếm hết chiều ngang của thẻ cha */
+    /* vì nó nổi lên 1 layer cao hơn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* các layer nổi lên */
+    z-index: 1;
+}
+
+.header-nav {
+    width: 100%;
+    height: var(--header-height);
+}
+
+.header-nav__list {
+    /* chỉ chiếm phần nội dung */
+    /*đặt trên 1 dòng và có tính chất khối, nhưng ko kế thừa hết chiều rộng của thẻ cha, khác với block*/
+    display: inline-block;
+    line-height: var(--header-height);
+}
+
+.header-nav__item {
+    position: relative;
+}
+
+.header-nav__item:hover .header-sub-nav {
+    display: block;
+}
+/* nên làm chữ css thẳng vào thẻ chứa chữ */
+#header .header-nav__item>a {
+    color: var(--text-white-color);
+    padding: 0 24px;
+    text-transform: uppercase;
+    line-height: var(--header-height);
+}
+
+/* nên hover thẻ li vì khi hover vào more và hove xuống subnav sẽ bị ảnh hưởng */
+
+/* hover là 1 pseduo class */
+
+/* để làm menu con đa cấp phải nắm rõ các thuộc tính position */
+
+#header .header-nav__item>a:hover, .header-sub-nav__link:hover {
+    background-color: var(--bg-hover-color);
+    color: var(--text-black-color);
+}
+.mobile-icon.right-float{
+    display: none;
+    
+}
+
+/* sub */
+
+.header-sub-nav {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+    min-width: 160px;
+    position: absolute;
+    /* mặc định  lấy chiều cao của thẻ cha chứa nó */
+    top: 100%;
+    /* mặc định */
+    left: 0;
+    display: none;
+    background-color: var(--bg-white-color);
+}
+
+.header-sub-nav__item {}
+
+.header-sub-nav__link {
+    --sub-menu-height: calc(var(--header-height) - 4px);
+    color: var(--text-black-color);
+    height: var(--sub-menu-height);
+    line-height: var(--sub-menu-height);
+}
+
+/* search */
+/* tính chất block của thẻ div, mặc định chiếm hết chiều rộng thẻ cha */
+
+/* nếu không đủ để chiếm, thì sẽ xuống hàng */
+.header-search {}
+
+.header-search__link {
+    line-height: var(--header-height);
+    padding: 0 23px;
+}
+
+.header-search__link:hover {
+    background: var(--bg-pink-color);
+}
+
+.header-search__icon {
+    font-size: 15px;
+    color: var(--text-white-color);
+}
+
+/* ------------------./header---------------- */
+
+/* ------------------slider---------------- */
+
+#slider {
+    margin-top: var(--header-height);
+}
+
+#slider .slider-bg {
+    /* padding top khi đặt % thì 50% của chiều rộng */
+    padding-top: 50%;
+
+      /* ảnh phải hiển thị đúng tỉ lệ, nếu ko sẽ méo ảnh */
+    /* background-image: đổ ảnh từ padding vào */
+    background-image: url('../imgs/sliders/chicago.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+
+#slider .slider-content {
+    text-align: center;
+    color: var(--text-white-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+     /* cách 2 */
+    /* width: 100%; */
+    /* cách 3 */
+    /* left: 0;
+    right: 0; */
+    bottom: 15%;
+}
+
+#slider .slider-content__heading {
+    font-size: 24px;
+}
+
+#slider .slider-content__text {
+    padding-top: 25px;
+    text-align: justify;
+}
+
+/* ------------------.slider---------------- */
+
+/* ------------------content---------------- */
+
+#container {}
+
+#container .content {
+    padding: 96px 16px;
+    text-align: center;
+    max-width: 800px;
+    /* canh giữa */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container .content-heading {
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+#container .content-slogan {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* ------------------the band---------------- */
+
+#container .the-band {}
+
+#container .the-band__text {
+    text-align: justify;
+    margin-bottom: 47px;
+}
+
+#container .the-band__team {}
+
+/* team member */
+
+
+
+#container .the-band .team-member__name {}
+
+#container .the-band .team-member__avatar {
+    width: 100%;
+}
+
+/* ------------------./the band---------------- */
+
+/* ------------------tour---------------- */
+
+.tour {
+    background-color: var(--bg-black-color);
+}
+
+#container .tour .content>p, .tour .content>h3 {
+    color: var(--text-white-color);
+}
+
+.status-tickets {
+    background-color: var(--bg-white-color);
+}
+
+.ticket {
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    padding: 8px 16px;
+    color: #757575;
+    font-family: 'Lato';
+}
+
+.ticket span:last-child {
+    background: var(--bg-pink-color);
+    color: var(--bg-white-color);
+    margin-left: 16px;
+    padding: 2px 8px;
+}
+
+.ticket:last-child span:last-child {
+    background: var(--bg-black-color);
+    border-radius: 50%;
+    /* thẻ div mất tính kế thừa chiều ngang */
+    float: right;
+    text-align: center;
+}
+.place-list{
+    /* width:  784px; */
+    padding-top: 32px;
+}
+/* lưu ý: khi dùng float thì thẻ cha ko ôm hết các thẻ con */
+/* thẻ cha lên 1 mặt phẳng khác */
+/* để khắc phục có 2 cách */
+/* cách 1 */
+/* overflow: hidden; */
+/* cách 2: đặt 1 thẻ dive có class=clear phía trước thẻ đóng và css clear:both*/
+.place-infor{
+    float: left;
+   
+}
+ /* chỉ cần đặt 1 chiều height or width */
+/* chiều còn lại sẽ tự động tỉ lệ */
+.place-infor img{
+     /* tính chất của ảnh: không tự co lại theo thẻ cha, khắc phục */
+    /* thêm width = 100% cho thẻ img */
+    width: 100%;
+    /* khoảng màu đen do 1 thẻ inline đứng cạnh 1 thẻ block */
+    /* khắc phục: */
+    display: block;
+}
+.place-infor img:hover{
+    opacity: 0.6;
+}
+.place-infor__content{
+    background-color: #fff;
+    text-align: left;
+    padding: 16px;
+}
+
+.place-infor__heading{
+    font-weight: bold;
+    font-size: 15px;
+}
+.place-infor__date{
+color: #757575;
+}
+.place-infor__text{
+
+}
+.place-infor__btn{
+
+}
+/* ------------------./tour---------------- */
+
+/* ------------------contact---------------- */
+.contact-infor>p>a{
+    display: initial;
+    color: #00e;
+}
+.contact-infor>p>a:hover{
+    filter: brightness(30%);
+    /* opacity: 0.6; */
+}
+
+.content .contact-infor, .contact-form{
+    text-align: left;
+    font-size: 18px;
+}
+.content .contact-infor>p i{
+    width: 30px;
+}
+ 
+.contact-form__name, .contact-form__email, .contact-form__message{
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.contact-form__email{
+   
+}
+.contact-form__message{
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+.content .contact-form__btn{
+float: right;
+}
+/* ------------------./contact---------------- */
+
+/* ------------------map---------------- */
+.map{
+    background-image: url('../imgs/map.jpg');
+    background-size: cover;
+    padding-top: 50%;
+    background-position: top center;
+    
+}
+/* ------------------./map---------------- */
+
+
+/* ------------------./content---------------- */
+
+/* ------------------footer---------------- */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .list-socials li{
+    display: inline-block;
+}
+#footer .list-socials li a i{
+    font-size: 24px;
+}
+#footer p{
+    margin-top: 16px;
+}
+#footer a{
+    color: #757575;
+    display: inline-block;
+}
+#footer a:hover{
+    opacity: 0.6;
+}
+/* ------------------./footer---------------- */
+

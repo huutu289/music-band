@@ -1,0 +1,140 @@
+:root {
+    --text-black-color: #000;
+    --text-white-color: #fff;
+    --bg-black-color: #000;
+    --bg-white-color: #fff;
+    --bg-hover-color: #ccc;
+    --bg-pink-color: #f44336;
+    --header-height: 46px;
+}
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ./reset */
+
+html {
+    /* chuẩn font chữ không chân */
+    /* đầu tiên tìm Arial nếu ko thấy tìm Helvetica  */
+    /* nếu ko thấy sẽ dùng 1 font ko chân nào đó trong chuẩn font sans-serif */
+    /* không nên dùng font-family trên thẻ * vì tất cả các thẻ đều ảnh hưởng */
+    /* kể cả những thẻ không có chữ */
+    /* để trong thẻ html thì  những thẻ có chữ mới được thừa kế */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.btn {
+    background-color: var(--bg-black-color);
+    color: var(--text-white-color);
+    padding: 9px 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--bg-hover-color);
+    color: var(--text-black-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.padding-16 {
+    padding: 0 16px;
+}
+/* một thuộc tính dùng chung nên cho important */
+.margin-top-25 {
+    margin-top: 25px;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-bottom-16 {
+    margin-bottom: 16px;
+}
+
+.margin-top-8 {
+    margin-top: 8px;
+}
+
+.left-float {
+    float: left !important;
+}
+
+.right-float {
+    float: right !important;
+}
+
+/* frame for website columns and rows */
+
+/* row */
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: calc(100%/2);
+}
+
+.col-3 {
+    width: calc(100%/3);
+}
+
+.col-full {
+    width: 100%;
+}
